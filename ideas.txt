@@ -1,0 +1,30 @@
+One initial table entry table, it can contain the following properties:
+1) Name  STR
+2) Position ENUM
+3) Team ENUM
+4) Age INT
+5) Date Of Entry DATE
+6) Projected Draft Round INT
+7) Notes TEXT
+8) Injury Suceptibility Rating (Based On History & 1-10) INT
+9) Source of Article (href)
+10) News Source
+
+* "Drafted" In session var, adjust CSS in list. Remove from returned list.
+* Manually adjust order function, can set your draft order manually, say L bell and OBJ are both 1's but I want L Bell first.
+* Create page to view records
+
+* Insert page to enter in all the data for record
+
+INDEX contains same structure as Modify PHP in Social Contact
+* AJAX on homepage to Filter Results based on Category picked, and text entry.
+* "Show All" Option Included.
+* By default, all SQL returns in order of projected round
+* Can click on record for editing and viewing.
+
+NAV contains the following Links: Nav Anchor to Homepage, Insert; 
+
+
+
+
+
