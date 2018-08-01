@@ -3,15 +3,15 @@ One initial table entry table, it can contain the following properties:
 2) Position ENUM
 3) Team ENUM
 4) Age INT
-5) Date Of Entry DATE
+5) Date Of Article DATE
 6) Projected Draft Round INT
 7) Notes TEXT
 8) Injury Suceptibility Rating (Based On History & 1-10) INT
 9) Source of Article (href)
 10) News Source
+11) created_at
 
 * "Drafted" In session var, adjust CSS in list. Remove from returned list.
-* Manually adjust order function, can set your draft order manually, say L bell and OBJ are both 1's but I want L Bell first.
 * Create page to view records
 
 * Insert page to enter in all the data for record

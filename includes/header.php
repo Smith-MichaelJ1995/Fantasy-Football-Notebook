@@ -1,3 +1,9 @@
+<?php
+    //create class object
+	require $_SERVER["DOCUMENT_ROOT"]."/FantasyFootballDraft/class/Backend.php"; 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,3 +50,10 @@
 		</form>-->
 	  </div>
 	</nav>
+	
+	
+	<div class="row">
+			<div class="col-lg-12" align="center" style="margin-top: 1%; margin-bottom: 0%;">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTon7rQB8vihOY6fw-0P7VTGmvJa1DV1KuAXaLbm5rHn7_LAEzg" class="mx-auto">
+			</div>
+	</div>
