@@ -94,6 +94,48 @@
            return $record;		   
 		   
 	   }
+	   
+	   //Return draft order for current time
+	   function returnDraftRecords()
+	   {
+		   //open database connection
+		   $fullDraftList = $this->retAllRecords();
+		   
+		    //email string to be returned
+		   $email_string = "";
+		   
+		   /*
+				<th>Name</th>
+					<th>Position</th>
+					<th>Team</th>
+					<th>Age</th>
+					<th>Date Of Article</th>
+					<th>Projected Draft Rnd</th>
+					<th>Injury Prone <br> (1 - 10 = likely)</th>
+					<th>News Source</th>
+					<th>Status</th>
+					<th>View Data</th>
+		   */
+		   
+		   foreach($fullDraftList as $player){
+		      $email_string .= "
+				<tr>
+					<td>".$player['name']."</td>
+					<td>".$player['position']."</td>
+					<td>".$player['team']."</td>
+					<td>".$player['age']."</td>
+					<td>".$player['dateofarticle']."</td>
+					<td>".$player['projdraftround']."</td>
+					<td>".$player['injsus']."</td>
+					<td>".$player['newssrc']."</td>
+				</tr>
+			  \n";
+	       }
+		   
+		   //return print string
+		   return $email_string;
+		   
+	   }
          
 	   function insertRecord($name, $pos, $team, $age, $dateofarticle, $projDraftRound, $injSus, $href, $newssrc, $notes)
 	   {
@@ -114,7 +156,7 @@
 			   //Fetch result
 			   //$entries = mysqli_fetch_all($rec, MYSQLI_ASSOC);
 			   
-			   //re-direct to post page
+			   //re-direct to $player page
 			   header('Location: http://localhost/FantasyFootballDraft/');
 			} 
 		    else {

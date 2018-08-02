@@ -56,8 +56,7 @@
 								   <i>Age:</i>  <b><?php echo '<i>'.$player['age'].'</i>'; ?></b> <br>
 								   <i>Date Of Article:</i>  <b><?php echo '<i>'.$player['dateofarticle'].'</i>'; ?></b> <br>
 								   <i>Projected Draft Round:</i>  <b><?php echo $player['projdraftround']; ?></b> <br>
-								   <i>Injury Prone:</i>  <b><?php echo '<i>'.$player['injsus'].'</i>'; ?></b> <br>
-								   <i>Article Link:</i>  <b><?php echo '<i>'.$player['href'].'</i>'; ?></b> <br>
+								   <i>Article Links:</i>  <b><?php echo '<i>'.$player['href'].'</i>'; ?></b> <br>
 								   <i>Injury Prone:</i>  <b><?php echo '<i>'.$player['injsus'].'</i>'; ?></b> <br>
 								   <i>Notes:</i>  <b><?php echo '<i>'.$player['notes'].'</i>'; ?></b> <br>
 								   <i>Draft Status:</i>  <b><?php echo '<i>'.$player['status'].'</i>'; ?></b> <br>
@@ -82,11 +81,11 @@
 				 <!-- ENTER UPDATE STATUS HERE..-->
 				 <div class="col-lg-6" style="text-align:left;">
 					 <form class="pull-right" method="POST" action="<?php echo 'http://localhost/FantasyFootballDraft/php/post.php?id='.$player['id'].'' ?>">
-											<label><b>Update Target Date:</b></label>
+											<label><b>Update Draft Status:</b></label>
 											<div class="form-group">
 												<select required name="status" class="form-control">
-													<option>Available</option>
-													<option>Drafted</option>
+													<option <?php echo ($player["status"] === "Available")?"selected" : ""; ?>>Available</option>
+													<option <?php echo ($player["status"] === "Drafted")?"selected" : ""; ?>>Drafted</option>
 												</select>
 											</div>
 								        <!-- Values ready to be re-submitted -->

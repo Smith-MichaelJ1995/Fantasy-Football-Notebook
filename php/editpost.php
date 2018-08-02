@@ -28,7 +28,7 @@
 		$nflPlayers->updateRecord($id, $name, $position, $team, $age, $dateofarticle, $projdraftround, $injsus, $href, $newssrc, $notes, $status);
 		
 		//re-direct to page
-		header('Location: http://localhost/FantasyFootballDraft/php/post.php?id='. print $id.'');
+		header('Location: http://localhost/FantasyFootballDraft/php/post.php?id='.$_POST['id'].'');
 		
 	}
 	
@@ -135,9 +135,18 @@
 			<input type="text" class="form-control" id="newssrc" name="newssrc" value="<?php echo $player['newssrc'] ?>">
 		  </div>
 		  <div class="form-group">
-			<label><h6>Additional Notes:</h6></label>
-			<textarea id="notes" required name="notes" placeholder="Important information about this player" class="form-control" value="<?php echo $player['notes'] ?>"></textarea>
+			<label for="email"><h6>Draft Status:</h6></label>
+				<select required name="status" class="form-control">
+					<option <?php echo ($player["status"] === "Available")?"selected" : ""; ?>>Available</option>
+					<option <?php echo ($player["status"] === "Drafted")?"selected" : ""; ?>>Drafted</option>
+				</select>
 		  </div>
+		  <div class="form-group">
+			<label><h6>Additional Notes:</h6></label>
+			<textarea id="notes" required name="notes" class="form-control"><?php echo $player['notes'] ?></textarea>
+		  </div>
+		  
+		  <input type="hidden" name="id" value="<?php echo $player['id'] ?>" class="btn btn-primary">
 		  <button type="submit" class="btn btn-primary" name="submit" style="width: 100%;">Submit</button>
 	</form>
 	</div>
