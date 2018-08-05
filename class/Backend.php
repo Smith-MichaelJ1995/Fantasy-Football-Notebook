@@ -156,8 +156,24 @@
 			   //Fetch result
 			   //$entries = mysqli_fetch_all($rec, MYSQLI_ASSOC);
 			   
-			   //re-direct to $player page
-			   header('Location: http://localhost/FantasyFootballDraft/');
+			   //re-direct to page
+		       $query_new_rec = "SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'fantasyfootballnotebook' AND   TABLE_NAME   = 'players'";
+			   
+			   if(mysqli_query($conn, $query_new_rec))
+			   {
+					
+		             //Get result
+				   $rec = mysqli_query($conn, $query_new_rec);
+				   
+				   //Fetch result
+				   $entries = mysqli_fetch_all($rec, MYSQLI_ASSOC);
+				   
+				   print_r($entries[0]['AUTO_INCREMENT']);
+				   
+				   //redirect to new record
+				   header('Location: http://localhost/FantasyFootballDraft/php/post.php?id='.($entries[0]['AUTO_INCREMENT'] - 1).'');
+			   }
+			 
 			} 
 		    else {
 			   echo 'Error: '. mysqli_error($conn);	

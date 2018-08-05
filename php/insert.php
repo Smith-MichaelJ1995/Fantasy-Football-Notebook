@@ -23,10 +23,6 @@
 		//insert records to database
 		$nflPlayers->insertRecord($name, $position, $team, $age, $dateofarticle, $projdraftround, $injsus, $href, $newssrc, $notes);
          
-		/*if (new DateTime() > new DateTime("2018-05-16")) {
-			echo 'It works';
-		}*/
- 	
 	}
 
 ?>

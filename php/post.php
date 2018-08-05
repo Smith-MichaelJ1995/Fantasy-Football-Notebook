@@ -51,35 +51,24 @@
 				<div class="col-lg-6" style="text-align:left; font-size: 25px;">
 				
 					<h1><b><?php echo $player['name'];?></b></h1>
-							<i>Position:</i> <b><?php echo $player['position'];?></b> <br>
-								   <i>Team:</i> <b><?php echo $player['team']; ?></b> <br>
-								   <i>Age:</i>  <b><?php echo '<i>'.$player['age'].'</i>'; ?></b> <br>
-								   <i>Date Of Article:</i>  <b><?php echo '<i>'.$player['dateofarticle'].'</i>'; ?></b> <br>
-								   <i>Projected Draft Round:</i>  <b><?php echo $player['projdraftround']; ?></b> <br>
-								   <i>Article Links:</i>  <b><?php echo '<i>'.$player['href'].'</i>'; ?></b> <br>
-								   <i>Injury Prone:</i>  <b><?php echo '<i>'.$player['injsus'].'</i>'; ?></b> <br>
-								   <i>Notes:</i>  <b><?php echo '<i>'.$player['notes'].'</i>'; ?></b> <br>
-								   <i>Draft Status:</i>  <b><?php echo '<i>'.$player['status'].'</i>'; ?></b> <br>
-								   <i>Created At:</i>  <b><?php echo '<i>'.$player['created_at'].'</i>'; ?></b> <br>
+							<i>Position:</i> <b style="color: red;"><?php echo $player['position'];?></b> <br>
+								   <i>Team:</i> <b style="color: red;"><?php echo $player['team']; ?></b> <br>
+								   <i>Age:</i>  <b style="color: red;"><?php echo '<i>'.$player['age'].'</i>'; ?></b> <br>
+								   <i>Date Of Article:</i>  <b style="color: red;"><?php echo '<i>'.$player['dateofarticle'].'</i>'; ?></b> <br>
+								   <i>Projected Draft Round:</i>  <b style="color: red;"><?php echo $player['projdraftround']; ?></b> <br>
+								   <i>Article Links:</i>  <b style="color: red;"><?php echo '<i>'.$player['href'].'</i>'; ?></b> <br>
+								   <i>Injury Prone:</i>  <b style="color: red;"><?php echo '<i>'.$player['injsus'].'</i>'; ?></b> <br>
+								   <i>Notes:</i>  <b style="color: red;"><?php echo '<i>'.$player['notes'].'</i>'; ?></b> <br>
+								   <i>Draft Status:</i>  <b style="color: red;"><?php echo '<i>'.$player['status'].'</i>'; ?></b> <br>
+								   <i>Created At:</i>  <b style="color: red;"><?php echo '<i>'.$player['created_at'].'</i>'; ?></b> <br>
 								   
 				      <br>
-					
-						<form class="pull-right" method="POST" action="<?php echo 'http://localhost/FantasyFootballDraft/php/post.php?id='.$player['id'].'' ?>">
-										<!-- Delete this post -->
-								<input type="hidden" name="delete_id" value="<?php echo $player['id'] ?>">
-								<input type="submit" name="delete" value="Delete" class="btn btn-danger">
-								
-								<!-- Link back to previous page -->
-							    <a class="btn btn-secondary" href="<?php echo 'http://localhost/FantasyFootballDraft/'; ?>">Back</a>
-										
-								<!-- Edit this post -->
-								<a href="http://localhost/FantasyFootballDraft/php/editpost.php?id=<?php echo $player['id'] ?>" class="btn btn-primary">Edit</a>
-						</form>
 						
 				 </div>	
 				 
 				 <!-- ENTER UPDATE STATUS HERE..-->
 				 <div class="col-lg-6" style="text-align:left;">
+				
 					 <form class="pull-right" method="POST" action="<?php echo 'http://localhost/FantasyFootballDraft/php/post.php?id='.$player['id'].'' ?>">
 											<label><b>Update Draft Status:</b></label>
 											<div class="form-group">
@@ -105,9 +94,20 @@
 										
 										<!-- update target -->
 										<input type="submit" name="contacted" value="Contacted" class="btn btn-success">
-								   </form>
+										<form method="POST" action="<?php echo 'http://localhost/FantasyFootballDraft/php/post.php?id='.$player['id'].'' ?>">
+														<!-- Delete this post -->
+												<input type="hidden" name="delete_id" value="<?php echo $player['id'] ?>">
+												<input type="submit" name="delete" value="Delete" class="btn btn-danger">
+												
+												<!-- Link back to previous page -->
+												<a class="btn btn-secondary" href="<?php echo 'http://localhost/FantasyFootballDraft/'; ?>">Back</a>
+														
+												<!-- Edit this post -->
+												<a href="http://localhost/FantasyFootballDraft/php/editpost.php?id=<?php echo $player['id'] ?>" class="btn btn-primary">Edit</a>
+										</form>
+						</form>
+						 
 				 </div>
-				
 			</div>
 		</div>
 		
